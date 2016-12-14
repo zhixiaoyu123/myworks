@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery.js"></script>    <link rel="stylesheet" href="icon/iconfont.css">
+
+    <script src="js/index.js"></script>
+    <title>login</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;box-sizing: border-box;}
+        html,body{background: #EEEEEE}
+        header{width: 7.5rem;height: 0.9rem;background:linear-gradient(to right,#FC2B53,#E31E5B 30%,#BA0968);padding: 0 0.2rem}
+        .title{width: 100%;height: 100%;}
+        .title ul {width: 100%;height: 100%;}
+        .title ul li{width: 33.33%;height: 100%;float: left;color: white;font-size: 0.24rem;line-height: 0.9rem;}
+        .title ul li:nth-child(1){text-align: left;}
+        .title ul li:nth-child(2){text-align: center;font-size: 0.4rem;}
+        .title ul li:nth-child(3){text-align: right;}
+        .top{width: 100%;height: 0.75rem;background: white;margin-top: 0.5rem;padding: 0.2rem 0.2rem;}
+        .bottom{width: 100%;height: 0.75rem;background: white;margin-top: 0.05rem;padding: 0.2rem 0.2rem;}
+        input{float: left;margin-left: 0.5rem;width:5rem;outline: none;border: none;color: #ccc}
+        .top-left{font-size: 0.24rem;color: #666666;float: left;}
+        .top-right{font-size: 0.24rem;color: #666666;float: right;}
+        .bottom-left{font-size: 0.24rem;color: #666666;float: left;}
+        .bottom-right{font-size: 0.24rem;color: #666666;float: right;}
+       .login{width: 7rem;height: 0.7rem;background: #F92953;border-radius: 0.15rem;color: white;text-align: center;line-height: 0.7rem;font-size: 0.4rem;margin-left: 0.25rem;margin-top: 0.5rem;}
+        .forget{width:7rem;height: 0.5rem;margin-left: 0.25rem;font-size: 0.12rem;text-align: right;margin-top: 0.2rem;}
+        .forget a{color: #666666}
+        .use{width: 100%;height: 0.5rem;text-align: center;line-height: 0.5rem;font-size: 0.24rem;color: #666;margin-top: 0.5rem;}
+        .fs{width: 4.18rem;height: 0.76rem;margin-left: 1.66rem;margin-top: 0.2rem;}
+        .fs ul{width: 100%;height: 100%;}
+        .fs ul li{width: 25%;height: 100%;float: left;position:relative}
+        .fs ul li div{width: 0.75rem;height: 0.75rem;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;font-size: 0.6rem;text-align: center;line-height: 0.75rem;}
+        .fs ul li:nth-child(1){color:#39E72B}
+        .fs ul li:nth-child(2){color:#1376F1;}
+        .fs ul li:nth-child(3){color:#F18113}
+        .fs ul li:nth-child(4){color:#134CF1}
+        .fail{font-size: 0.24rem;margin-top: 3rem;width: 7rem;height: 0.5rem;margin-left: 1rem;color: #666666}
+        .fail span{margin-right: 0.1rem;}
+        .fail p{margin-left: 0.3rem;margin-top: 0.2rem;}
+    </style>
+</head>
+<body>
+<header>
+    <div class="title">
+        <ul>
+            <a href="shouye.html"><li>取消</li></a>
+            <li>登陆账号</li>
+            <li>注册</li>
+        </ul>
+    </div>
+</header>
+<div class="top">
+    <div class="top-left iconfont icon-wo">
+
+    </div>
+    <input type="text" value="用户名/邮箱/手机号">
+    <div class="top-right iconfont icon-arrowDown"></div>
+</div>
+<div class="bottom">
+    <div class="bottom-left iconfont icon-suo"></div>
+    <input type="password" value="请输入您的密码">
+    <div class="bottom-right iconfont icon-buxianshi"></div>
+</div>
+<div class="login">登录</div>
+<div class="forget"><a href="">忘记密码</a></div>
+<div class="use">使用合作伙伴账号登录</div>
+<div class="fs">
+    <ul>
+        <li><div class="iconfont icon-weixin"></div></li>
+        <li><div class="iconfont icon-qq"></div></li>
+        <li><div class="iconfont icon-weibo"></div></li>
+        <li><div class="iconfont icon-jikediancanicon23"></div></li>
+    </ul>
+</div>
+<div class="fail">
+    <span>七天无理由退换货 </span>
+    <span> 支持货到付款 </span>
+    <span> 100%正品保证</span>
+    <p>纽约证券交易所上市公司（股票代码UXWG）</p>
+</div>
+</body>
+</html>

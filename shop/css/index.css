@@ -1,0 +1,210 @@
+*{
+    padding:0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+.bigbox{
+    width:100%;
+    height:100%;
+}
+.bg1{
+    width:100%;
+    height:100%;
+    background:url(../img/3.jpg) no-repeat;
+    background-size:cover;
+}
+.bg2{
+    width:100%;
+    height:100%;
+    background:url(../img/4.jpg) no-repeat;
+    background-size:cover;
+}
+.bg3{
+    width:100%;
+    height:100%;
+    background:url(../img/5.jpg) no-repeat;
+    background-size:cover;
+}
+.bg4{
+    width:100%;
+    height:100%;
+    background:url(../img/7.jpg) no-repeat;
+    background-size:cover;
+}
+.title{
+    width:5.6rem;
+    height:0.6rem;
+    font-size:0.6rem;
+    color:#fff;
+    position:absolute;
+    top:1rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.phonebox1{
+    width:6.17rem;
+    height:10.68rem;
+    position:absolute;
+    bottom:0.2rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.phone1{
+    width:3rem;
+    height:5rem;
+    background:url(../img/1_1.png) no-repeat;
+    background-size:contain;
+    position:absolute;
+   top:1%;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.new1{
+    width:5.6rem;
+    height:1rem;
+    background:url(../img/1_2.png) no-repeat;
+    background-size:contain;
+    position:absolute;
+    top:70%;
+    left:30%;
+}
+.bujian1{
+    width:0.64rem;
+    height:0.6rem;
+    background:url(../img/1_3.png) no-repeat;
+    background-size: contain;
+    position:absolute;
+    left:0.75rem;
+    bottom:1.96rem;
+}
+.bujian2{
+    width:0.75rem;
+    height:0.68rem;
+    background:url(../img/1_1.png) no-repeat;
+    background-size: contain;
+    position:absolute;
+    right:0.76rem;
+    top:1.56rem;
+}
+/*第二屏*/
+.phonebox2{
+    width:1.5rem;
+    height:3rem;
+    position:absolute;
+    bottom:0.3rem;
+    right:0;
+    left:0;
+    margin:0 auto;
+}
+.phone2{
+    width:100%;
+    height:100%;
+    background:url(../img/2_1.png) no-repeat;
+    background-size: contain;
+}
+.title1{
+    width:1rem;
+    height:0.62rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.18rem;
+    color:#fff;
+    position:absolute;
+    top:0.8rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.title2{
+    width:2rem;
+    height:0.35rem;
+    font-size: 0.35rem;
+    font-weight: 500;
+    color:#fff;
+    position:absolute;
+    top:1.6rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+/*第三屏*/
+.title3{
+    width:2rem;
+    height:0.6rem;
+    font-size: 0.6rem;
+    color:#fff;
+    position:absolute;
+    top:0.84rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.phonebox3{
+    width:3rem;
+    height:5rem;
+    position:absolute;
+    bottom:0.3rem;
+    right:0;
+    left:0;
+    margin:0 auto;
+}
+.phone3{
+    width:100%;
+    height:100%;
+    background:url(../img/3_1.png) no-repeat;
+    background-size: contain;
+}
+.new3{
+    width:1rem;
+    height:1rem;
+    background:url(../img/3_2.png) no-repeat;
+    background-size: contain;
+    position:absolute;
+    bottom:3.63rem;
+    left:-0.4rem;
+}
+/*第四屏*/
+.title4{
+    width:2rem;
+    height:0.6rem;
+    font-size: 0.6rem;
+    color:#fff;
+    position:absolute;
+    top:0.84rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.phonebox4{
+    width:2rem;
+    height:5rem;
+    position:absolute;
+    bottom:0.3rem;
+    right:0;
+    left:0;
+    margin:0 auto;
+}
+.phone4{
+    width:100%;
+    height:100%;
+    background:url(../img/4_1.png) no-repeat;
+    background-size: contain;
+}
+.new4{
+    width:1rem;
+    height:1rem;
+    background:url(../img/4_2.png) no-repeat;
+    background-size: contain;
+    position:absolute;
+    bottom:3.63rem;
+    left:-0.4rem;
+}
+.ljty{width: 100%;height: 100%;z-index: 999;}
