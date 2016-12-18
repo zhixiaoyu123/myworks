@@ -17,9 +17,5 @@ $(function(){
            click:true
        })
     }
-    loaded();
-    // $(".bg4").click(function () {
-    //     alert(2)
-    //     window.location.href="../shouye.html"
-    // })
+
 })

@@ -1,4 +1,4 @@
-window.onload=function () {
+document.addEventListener("DOMContentLoaded",function () {
     function resize(originSize,type){
         var type=type|| "x";
         if(type=="x"){
@@ -12,4 +12,5 @@ window.onload=function () {
         html.style.fontSize=scale+"px";
     }
     resize(750);
-}
+})
+
