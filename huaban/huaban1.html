@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/shape.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+<style>
+    body,html,ul,li{margin: 0;padding: 0;list-style: none;text-decoration: none}
+    .hbbox{width:1000px;height:600px;position:absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;background: url(hbbj.jpg) no-repeat ;background-size: 100% 100%; position:absolute;left:0;right:0;margin: auto;top: 20px;}
+    canvas{position:absolute;left:0;top:0;right:0;bottom:0;margin: auto;left: 365px;top:-110px;}
+    .ann{position: absolute;}
+    .ann:hover{background: rgba(82,113,131,0.5)}
+    .bkcolor{width:80px;height:25px;left: 60px;top: 78px;}
+    .newbuild{width:80px;height:30px;left:270px;top: 113px;}
+    .eraser{width:42px;height:25px;left:160px;top: 200px;}
+    .save{width:40px;height:25px;left:72px;top: 292px;}
+    .tccolor{width:80px;height:23px;left:113px;top: 340px;}
+    .pencil{width:30px;height:30px;left:208px;top: 313px;}
+    .delete{width:60px;height:35px;left:106px;top: 510px;}
+    .pencil ul{width:100px;height: 200px; position: absolute;top:30px;display: none;}
+    .pencil ul li{width: 100%;height: 16%;text-align: left;color: white}
+</style>
+
+<body>
+<div class="hbbox">
+    <canvas width="587" height="461" style="border:1px solid black">
+    </canvas>
+    <div class="bkcolor ann"></div>
+    <div class="newbuild ann"></div>
+    <div class="eraser ann"></div>
+    <div class="save ann"></div>
+    <div class="tccolor ann"></div>
+    <div class="pencil ann">
+        <ul class="list">
+            <li class="lists" data-role="line">画线</li>
+            <li class="lists" data-role="rect">矩形</li>
+            <li class="lists" data-role="arc">圆</li>
+            <li class="lists" data-role="bian">多边形</li>
+            <li class="lists" data-role="jiao">多角形</li>
+            <li class="lists" data-role="pen">铅笔工具</li>
+        </ul>
+    </div>
+    <div class="delete ann"></div>
+</div>
+</body>
+<script>
+    window.onload=function () {
+        var canvas=document.querySelector("canvas");
+        var cobj=canvas.getContext("2d");
+        var copy=document.querySelector(".copy");
+        var drawObj=new shape(canvas,copy,cobj);
+
+        var pencil=document.getElementsByClassName(".pencil")[0];
+        var lis=$("li",$("ul",pencil)[0]);
+        /*菜单操作*/
+        $(".pencil").click(function() {
+           $("ul",pencil).slideToggle();
+        })
+
+        /*画图*/
+        lis.click(function(){
+            alert($(this).index())
+            if(fn=="bian"){
+                drawObj.bianNum=prompt("请输入边数",drawObj.bianNum);
+            }
+            if(fn=="jiao"){
+                drawObj.bianNum=prompt("请输入边数",drawObj.jiaoNum);
+            }
+            var fn=$(this).attr("data-role");
+            if(fn!=="pen") {
+                drawObj.type = fn;
+                drawObj.draw();
+            }else{
+                drawObj.pen();
+            }
+        })
+
+        /*画图的方式*/
+        $(".aside-menu-list:eq(2) li").click(function(){
+            var fn=$(this).attr("data-role");
+            drawObj.style=fn;
+            drawObj.draw();
+        })
+        /*画图的颜色*/
+        $(".aside-menu-list:eq(3) input").change(function(){
+            drawObj[$(this).attr("data-role")]=$(this).val();
+            drawObj.draw();
+        })
+
+        /*线条的粗细*/
+        $(".aside-menu-list:eq(4) li").click(function(){
+
+            var num=$(this).attr("data-role");
+            if(num!=="null") {
+                drawObj.linew =num
+                drawObj.draw();
+            }
+        })
+
+        $(".aside-menu-list:eq(4) li input").change(function(){
+            var num=$(this).val();
+            drawObj.linew =num
+            drawObj.draw();
+
+        })
+
+        /*文件*/
+        $(".aside-menu-list:eq(0) li ").click(function(){
+            var index=$(".aside-menu-list:eq(0) li").index(this);
+            if(index==0){
+                if(drawObj.historys.length>0){
+                    var yes=confirm("是否保存");
+                    if(yes){
+                        var url=canvas.toDataURL();
+                        var newurl=url.replace("image/png","stream/octet")
+                        location.href=newurl;
+                    }
+                }
+
+                cobj.clearRect(0,0,canvas.width,canvas.height);
+                drawObj.historys=[];
+
+            }else if(index==1){
+                //返回
+
+
+                if(drawObj.historys.length==0){
+                    //no
+                    cobj.clearRect(0,0,canvas.width,canvas.height);
+                    setTimeout(function(){
+                        alert("不能返回");
+                    },10)
+                }else{
+                    if (drawObj.isback) {
+                        if (drawObj.historys.length == 1) {
+                            drawObj.historys.pop();
+                            cobj.clearRect(0, 0, canvas.width, canvas.height);
+                        } else {
+                            drawObj.historys.pop();
+                            cobj.putImageData(drawObj.historys.pop(), 0, 0);
+                        }
+                    } else {
+                        cobj.putImageData(drawObj.historys.pop(), 0, 0);
+                    }
+
+                    drawObj.isback = false;
+
+                }
+            }else if(index==2) {
+                var url=canvas.toDataURL();
+                var newurl=url.replace("image/png","stream/octet")
+                location.href=newurl;
+
+            }
+
+
+
+        })
+
+
+    }
+</script>
+</html>
